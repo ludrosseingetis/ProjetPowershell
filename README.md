@@ -8,32 +8,44 @@ Ouvrir PowerShell et faire :
 
     .\PasswordManager.ps1
 
+Le menu interactif
+-------------------
+
+1 - Generer un mot de passe
+2 - Tester la force d'un mot de passe
+3 - Generer une liste de mots de passe
+4 - Exporter les mots de passe
+5 - Sauvegarder au coffre-fort
+6 - Quitter
+
 Les fonctions disponibles
 --------------------------
 
-New-Password
+New-Password (1)
   Genere un mot de passe.
-  Parametres : -Length (longueur), -Uppercase, -Lowercase, -Numbers, -SpecialChars
-  Exemple : New-Password -Length 16
+  Parametres : Nombre de caractères (Minimum 12)
 
-Test-PasswordStrength
-  Teste la robustesse d'un mot de passe.
-  Exemple : Test-PasswordStrength -Password "MonMotDePasse1!"
+Test-PasswordStrength (2)
+  Teste la robustesse d'un mot de passe,
+  3 état de robustesse:
+  
+  Weak
+  Medium
+  Strong
+  Very Strong
+  
+New-PasswordList (3)
+  Genere des mots de passe pour plusieurs utilisateurs depuis un fichier .txt,
+  Créer un Fichier .txt et y rentrer des utilisateurs (se fier a l'exemple a la fin du readme)
+  Puis lancer le script et indiquer le chemin d'accès
 
-New-PasswordList
-  Genere des mots de passe pour plusieurs utilisateurs depuis un fichier .txt
-  Exemple : New-PasswordList -UserFile users.txt -Length 14
-
-Export-Passwords
+Export-Passwords (4)
   Exporte la derniere liste generee en CSV.
-  Exemple : Export-Passwords -Path mots_de_passe.csv
 
-Save-SecurePassword
+Save-SecurePassword (5)
   Sauvegarde un mot de passe chiffre dans vault.txt
-  Exemple : Save-SecurePassword -User user1 -Password "Test123!"
 
-
-Format du fichier users.txt
+Format du fichier users.txt pour la fonction 3
 -----------------------------
 
 Mettre un utilisateur par ligne :
@@ -44,12 +56,3 @@ user3
 
 ---
 
-Le menu interactif
--------------------
-
-1 - Generer un mot de passe
-2 - Tester la force d'un mot de passe
-3 - Generer une liste de mots de passe
-4 - Exporter les mots de passe
-5 - Sauvegarder au coffre-fort
-6 - Quitter
