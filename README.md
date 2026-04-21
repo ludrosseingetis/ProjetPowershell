@@ -32,7 +32,6 @@ Test-PasswordStrength (2)
   Weak
   Medium
   Strong
-  Very Strong
   
 New-PasswordList (3)
   Genere des mots de passe pour plusieurs utilisateurs depuis un fichier .txt,
